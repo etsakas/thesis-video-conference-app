@@ -1,0 +1,64 @@
+.screenMsg {
+  margin: 3rem auto;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.sessionHeader {
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #008080;
+}
+
+.sessionTitle{
+  font-size: 2em;
+  margin: 0;
+}
+
+.videoPanel button {
+  float: right;
+  font-size: 1.2em;
+  border: 2px solid #008080;
+  color: #008080;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.videoPanel button:hover {
+  transition: 0.3s;
+  color: crimson;
+}
+
+.videoContainer {
+  /* main video, all videos, chat */
+  font-size: 1;
+  display: grid;
+  grid-template-areas:
+  "mv av"
+  "ct av";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.mainVideo {
+  display: inline-block;
+  grid-area: mv;
+}
+
+.miniVideoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: av;
+}
+
+.streamContainer {
+  /* change this for video resizing */
+  width: 33%;
+}
+
+.chatContainer {
+  background-color: #008080;
+  color: white;
+}

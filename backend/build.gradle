@@ -1,0 +1,49 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation group: 'org.springframework.security', name: 'spring-security-core', version: '5.5.1'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+		
+	// Allows us to format date (see ErrorReponse.java)
+	implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.12.3'
+
+	// Allows us to parse json string
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'	
+
+	// Wee need to add this one because of the other two jackson dependencies.
+	// For some reason spring boot won't run otherwise.
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.12.3'
+	// And also this one although we don't use it
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.12.3'
+
+	// Allows us to use constrain annotations like @Size etc
+	implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.1'
+	
+	implementation group: 'io.openvidu', name: 'openvidu-java-client', version: '2.19.0'
+
+	// Enables auto-restart when a file changes
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}

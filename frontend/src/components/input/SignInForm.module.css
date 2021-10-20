@@ -1,0 +1,36 @@
+.form {
+  width: fit-content;
+  border: 2px solid #008080;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-size: 1.25rem;
+  background-color: #008080;
+  color: white;
+  border: 2px solid #88dfdf;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.button:focus,
+.button:hover {
+  background-color: #0e9191;
+  transition: 0.3s;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  font: inherit;
+  border: 2px solid #88dfdf;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 15px 0;
+}
